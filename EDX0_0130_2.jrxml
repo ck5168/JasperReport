@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EDH0_0130" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="585" leftMargin="5" rightMargin="5" topMargin="0" bottomMargin="0">
+	<parameter name="BOX_NO" class="java.lang.String"/>
+	<parameter name="BOX_NO_print" class="java.lang.String"/>
+	<field name="BOX_NO" class="java.lang.String"/>
+	<field name="BOX_NO_print" class="java.lang.String"/>
+	<detail>
+		<band height="42"/>
+		<band height="168">
+			<image scaleImage="Clip">
+				<reportElement x="150" y="40" width="286" height="41"/>
+				<imageExpression class="java.awt.Image"><![CDATA[cathay.util.SlipBarCode.drawingCode128Barcode($F{BOX_NO_print})]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="132" y="81" width="286" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" pdfFontName="reports/fonts/merged-9.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BOX_NO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
